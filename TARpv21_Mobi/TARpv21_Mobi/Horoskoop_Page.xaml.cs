@@ -36,7 +36,10 @@ namespace TARpv21_Mobi
 
         private void Data_DateSelected(object sender, DateChangedEventArgs e)
         {
-            
+
+
+
+
         }
     }
 }
