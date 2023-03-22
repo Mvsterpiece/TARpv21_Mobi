@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,7 +16,7 @@ namespace TARpv21_Mobi
     {
 
         private List<Task> tasks;
-        List<string> taskNames = new List<string> { "Подъем", "Завтрак", "Учеба","Перекус","Учеба2", "Чилл", "Общение" };
+        List<string> taskNames = new List<string> { "Подъем", "Завтрак", "Учеба","Перекус","Учеба2", "Чилл", "Общение", "Вождение","Домой","Играть","Ужин","Сон"};
         List<string> descriptions = new List<string>
         {
             "Проснуться вообще",
@@ -25,8 +26,11 @@ namespace TARpv21_Mobi
             "Снова на учебу",
             "Захотелось полежать",
             "Общение с людишками",
-
-            
+            "Поехал кататься на машинке",
+            "Поехать домой",
+            "Играть в компуктер",
+            "Вечерний перекус",
+            "Время прилечь подремать"
 
         };
 
@@ -36,14 +40,13 @@ namespace TARpv21_Mobi
 
             tasks = new List<Task>();
 
-            for (int i = 0; i <= 6; i++)
+            for (int i = 0; i <= 11; i++)
             {
                 tasks.Add(new Task
                 {
                     Image = $"img{i}.png",
                     Taska = taskNames[i],
                     Time = new System.TimeSpan(8 + i, 0, 0),
-                    Completed = 0,
                     Description = descriptions[i]
                 });
             }
@@ -51,6 +54,7 @@ namespace TARpv21_Mobi
             myListView.ItemsSource = tasks;
             myListView.ItemTapped += ListViewItem;
         }
+
 
         private async void ListViewItem(object sender, ItemTappedEventArgs e)
         {
@@ -68,7 +72,6 @@ namespace TARpv21_Mobi
         public string Image { get; set; }
         public string Taska { get; set; }
         public System.TimeSpan Time { get; set; }
-        public int Completed { get; set; }
         public string Description { get; set; }
     }
 }
