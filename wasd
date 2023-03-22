@@ -1,0 +1,46 @@
+        private List<string> timezones = new List<string> {
+            "Tokyo Standard Time",
+            "Eastern Standard Time",
+            "Pacific Standard Time"
+        };
+
+
+        public WorldClock()
+        {
+            InitializeComponent();
+
+            timezonePicker.ItemsSource = timezones;
+
+            timezonePicker.SelectedIndex = 0;
+
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                UpdateCurrentTime();
+                return true;
+            });
+
+        }
+
+        private void UpdateCurrentTime()
+        {
+            string timezone = (string)timezonePicker.SelectedItem;
+
+            DateTime currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById(timezone));
+
+            tokyoTimeLabel.Text = $"Tokyo: {currentTime.ToString("h:mm:ss tt")}";
+            newYorkTimeLabel.Text = $"New York: {TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).ToString("h:mm:ss tt")}";
+            lasVegasTimeLabel.Text = $"Las Vegas: {TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("h:mm:ss tt")}";
+        }
+
+---------------------------------------------------------------------------
+        <StackLayout>
+            <Label Text="World Clock" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+            <Label Text="Select a timezone:" HorizontalOptions="CenterAndExpand"/>
+            <Picker x:Name="timezonePicker" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Current time in Tokyo:" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="tokyoTimeLabel" TextColor="Black" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Current time in New York:" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="newYorkTimeLabel" TextColor="Black" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Current time in Las Vegas:" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="lasVegasTimeLabel" TextColor="Black" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
