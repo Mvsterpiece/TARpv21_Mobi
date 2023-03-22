@@ -34,6 +34,14 @@ namespace TARpv21_Mobi
 
         };
 
+        public class Task
+        {
+            public string Image { get; set; }
+            public string Taska { get; set; }
+            public System.TimeSpan Time { get; set; }
+            public string Description { get; set; }
+        }
+
         public Ajatunni()
         {
             InitializeComponent();
@@ -53,6 +61,7 @@ namespace TARpv21_Mobi
 
             myListView.ItemsSource = tasks;
             myListView.ItemTapped += ListViewItem;
+            checkbox.CheckedChanged += OnCheckboxCheckedChanged;
         }
 
 
@@ -65,13 +74,19 @@ namespace TARpv21_Mobi
                 myListView.SelectedItem = null;
             }
         }
-    }
 
-    public class Task
-    {
-        public string Image { get; set; }
-        public string Taska { get; set; }
-        public System.TimeSpan Time { get; set; }
-        public string Description { get; set; }
+        private void OnCheckboxCheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (e.Value)
+            {
+                timeLabel.Text = $"Checked at {DateTime.Now.ToString("h:mm:ss tt")}";
+            }
+            else
+            {
+                timeLabel.Text = "";
+            }
+        }
+
+
     }
 }
