@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TARpv21_Mobi.Ajatunni">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Распорядок дня" FontSize="Large" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="myListView" ItemsSource="{Binding tasks}" ItemTapped="ListViewItem" HasUnevenRows="True" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Image}" WidthRequest="60" HeightRequest="60" Margin="10" />
+                                <StackLayout VerticalOptions="Center">
+                                    <Label Text="{Binding Taska}" FontSize="Medium" Margin="0,5,0,0" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <TimePicker x:Name="myTimePicker" Time="{Binding Time}" Format="hh:mm" Margin="0,5,0,0" />
+                                        <Slider x:Name="mySlider" Minimum="0" Maximum="1" WidthRequest="50" Value="{Binding Completed}" Margin="10,0,0,0" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

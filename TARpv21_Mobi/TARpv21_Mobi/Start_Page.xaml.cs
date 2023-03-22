@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,8 +9,8 @@ namespace TARpv21_Mobi
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Start_Page : ContentPage
     {
-        List<ContentPage> contentPages = new List<ContentPage>() { new Horoskoop_Page() };
-        List<string> tekstid = new List<string> { "Horoskoop" };
+        List<ContentPage> contentPages = new List<ContentPage>() { new Horoskoop_Page(), new Ajatunni() };
+        List<string> tekstid = new List<string> { "Horoskoop", "Ajatunniplaan" };
         public Start_Page()
         {
 

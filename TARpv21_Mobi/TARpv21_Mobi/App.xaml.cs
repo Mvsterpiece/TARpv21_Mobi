@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace TARpv21_Mobi
 {
@@ -10,7 +8,7 @@ namespace TARpv21_Mobi
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage( new Start_Page());
+            MainPage = new NavigationPage(new Start_Page());
         }
 
         protected override void OnStart()

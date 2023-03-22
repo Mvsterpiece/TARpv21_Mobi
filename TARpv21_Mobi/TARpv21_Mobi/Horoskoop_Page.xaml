@@ -3,10 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TARpv21_Mobi.Horoskoop_Page">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="#F5F5F5" Margin="20" Padding="10" Spacing="10">
+            <StackLayout.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="FontSize" Value="20" />
+                </Style>
+                <Style TargetType="DatePicker">
+                    <Setter Property="BackgroundColor" Value="White" />
+                    <Setter Property="HeightRequest" Value="50" />
+                </Style>
+                <Style TargetType="Editor">
+                    <Setter Property="BackgroundColor" Value="White" />
+                    <Setter Property="HeightRequest" Value="200" />
+                </Style>
+            </StackLayout.Resources>
+
+            <Label Text="Выберите дату." HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
+            <DatePicker x:Name="datePicker" DateSelected="OnDateSelected" />
+
+            <Image x:Name="image" Source="horoskoop.jpg" />
+
+            <Editor x:Name="editor" Text="Ваш гороскоп отобразится здесь." VerticalOptions="FillAndExpand" />
+
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
