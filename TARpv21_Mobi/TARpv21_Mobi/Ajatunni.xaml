@@ -16,10 +16,7 @@
                                     <StackLayout Orientation="Horizontal">
                                         <TimePicker x:Name="myTimePicker" Time="{Binding Time}" Format="hh:mm" Margin="0,5,0,0" />
                                     </StackLayout>
-                                    <StackLayout>
-                                        <CheckBox x:Name="checkbox" HorizontalOptions="CenterAndExpand" />
-                                        <Label x:Name="timeLabel" FontSize="Medium" HorizontalOptions="CenterAndExpand" />
-                                    </StackLayout>
+                                    <CheckBox x:Name="checki" HorizontalOptions="CenterAndExpand" />
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

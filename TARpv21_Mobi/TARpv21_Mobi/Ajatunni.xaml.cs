@@ -61,8 +61,11 @@ namespace TARpv21_Mobi
 
             myListView.ItemsSource = tasks;
             myListView.ItemTapped += ListViewItem;
-            checkbox.CheckedChanged += OnCheckboxCheckedChanged;
+
         }
+
+
+
 
 
         private async void ListViewItem(object sender, ItemTappedEventArgs e)
@@ -74,19 +77,6 @@ namespace TARpv21_Mobi
                 myListView.SelectedItem = null;
             }
         }
-
-        private void OnCheckboxCheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            if (e.Value)
-            {
-                timeLabel.Text = $"Checked at {DateTime.Now.ToString("h:mm:ss tt")}";
-            }
-            else
-            {
-                timeLabel.Text = "";
-            }
-        }
-
 
     }
 }

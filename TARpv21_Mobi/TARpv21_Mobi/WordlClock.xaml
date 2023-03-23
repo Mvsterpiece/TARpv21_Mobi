@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TARpv21_Mobi.WordlClock">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Select a time zone:" />
+            <Picker x:Name="timeZonePicker">
+                <Picker.Items>
+                    <x:String>America/New_York</x:String>
+                    <x:String>America/Los_Angeles</x:String>
+                    <x:String>Europe/London</x:String>
+                    <x:String>Asia/Tokyo</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Selected time:" />
+            <TimePicker x:Name="timePicker" Format="hh:mm tt" />
+
+            <Button Text="Convert time" Clicked="OnConvertTimeClicked" />
+            <Label x:Name="resultLabel" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
