@@ -36,10 +36,10 @@ namespace TARpv21_Mobi
 
         public class Task
         {
-            public string Image { get; set; }
-            public string Taska { get; set; }
             public System.TimeSpan Time { get; set; }
             public string Description { get; set; }
+            public string Image { get; set; }
+            public string task { get; set; }
         }
 
         public Ajatunni()
@@ -53,7 +53,7 @@ namespace TARpv21_Mobi
                 tasks.Add(new Task
                 {
                     Image = $"img{i}.png",
-                    Taska = taskNames[i],
+                    task = taskNames[i],
                     Time = new System.TimeSpan(8 + i, 0, 0),
                     Description = descriptions[i]
                 });
@@ -63,9 +63,6 @@ namespace TARpv21_Mobi
             myListView.ItemTapped += ListViewItem;
 
         }
-
-
-
 
 
         private async void ListViewItem(object sender, ItemTappedEventArgs e)

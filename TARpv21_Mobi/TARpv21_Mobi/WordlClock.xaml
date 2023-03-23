@@ -4,7 +4,7 @@
              x:Class="TARpv21_Mobi.WordlClock">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Select a time zone:" />
+            <Label Text="Выберите часовой пояс:" />
             <Picker x:Name="timeZonePicker">
                 <Picker.Items>
                     <x:String>America/New_York</x:String>
@@ -14,7 +14,7 @@
                 </Picker.Items>
             </Picker>
 
-            <Label Text="Selected time:" />
+            <Label Text="Выберите время:" />
             <TimePicker x:Name="timePicker" Format="hh:mm tt" />
 
             <Button Text="Convert time" Clicked="OnConvertTimeClicked" />

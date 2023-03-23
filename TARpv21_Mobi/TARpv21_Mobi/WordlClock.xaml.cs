@@ -31,7 +31,7 @@ namespace TARpv21_Mobi
             TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
             DateTime convertedDateTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZoneInfo);
 
-            resultLabel.Text = $"Selected time in {timeZoneId}: {selectedDateTime.ToString()} \n Converted time: {convertedDateTime.ToString()}";
+            resultLabel.Text = $"Выбранное время {timeZoneId}: {selectedDateTime.ToString()} \n Конвертированное время: {convertedDateTime.ToString()}";
         }
 
     }

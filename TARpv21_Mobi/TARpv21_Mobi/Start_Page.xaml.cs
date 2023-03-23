@@ -9,8 +9,8 @@ namespace TARpv21_Mobi
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Start_Page : ContentPage
     {
-        List<ContentPage> contentPages = new List<ContentPage>() { new Horoskoop_Page(), new Ajatunni() };
-        List<string> tekstid = new List<string> { "Horoskoop", "Ajatunniplaan" };
+        List<ContentPage> contentPages = new List<ContentPage>() { new Horoskoop_Page(), new Ajatunni(), new WordlClock() };
+        List<string> tekstid = new List<string> { "Horoskoop", "Ajatunniplaan", "WordlClock" };
         public Start_Page()
         {
 
