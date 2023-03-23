@@ -4,20 +4,21 @@
              x:Class="TARpv21_Mobi.WordlClock">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Выберите часовой пояс:" />
+            <Label Text="Выберите временную зону: " />
             <Picker x:Name="timeZonePicker">
                 <Picker.Items>
                     <x:String>America/New_York</x:String>
                     <x:String>America/Los_Angeles</x:String>
                     <x:String>Europe/London</x:String>
                     <x:String>Asia/Tokyo</x:String>
+                    <x:String>Russia/Moscow</x:String>
                 </Picker.Items>
             </Picker>
 
-            <Label Text="Выберите время:" />
-            <TimePicker x:Name="timePicker" Format="hh:mm tt" />
+            <Label Text="Различие во времени: " />
+            <Label x:Name="timeDifferenceLabel" />
 
-            <Button Text="Convert time" Clicked="OnConvertTimeClicked" />
+            <Button Text="Рассчитать различие во времени" Clicked="OnCalculateTimeDifferenceClicked" />
             <Label x:Name="resultLabel" />
         </StackLayout>
     </ContentPage.Content>

@@ -17,7 +17,7 @@
                                         <TimePicker x:Name="myTimePicker" Time="{Binding Time}" Format="hh:mm" Margin="0,5,0,0" />
                                     </StackLayout>
                                     <CheckBox x:Name="checki" HorizontalOptions="CenterAndExpand" />
-                                </StackLayout>
+                                    </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

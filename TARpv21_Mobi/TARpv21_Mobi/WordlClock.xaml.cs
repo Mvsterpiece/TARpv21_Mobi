@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
+using static TARpv21_Mobi.Ajatunni;
 
 namespace TARpv21_Mobi
 {
@@ -19,19 +20,29 @@ namespace TARpv21_Mobi
         }
 
 
-        private void OnConvertTimeClicked(object sender, EventArgs e)
+
+        private async void OnCalculateTimeDifferenceClicked(object sender, EventArgs e)
         {
             string timeZoneId = (string)timeZonePicker.SelectedItem;
 
-            TimeSpan selectedTime = timePicker.Time;
+            try
+            {
+                TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
+                DateTime currentTimeInSelectedTimeZone = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZoneInfo);
 
-            DateTime selectedDateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
-                                                      selectedTime.Hours, selectedTime.Minutes, selectedTime.Seconds);
+                TimeSpan timeDifference = currentTimeInSelectedTimeZone - DateTime.Now;
 
-            TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
-            DateTime convertedDateTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZoneInfo);
+                timeDifferenceLabel.Text = timeDifference.ToString();
+                resultLabel.Text = $"Текущее время {timeZoneId}: {currentTimeInSelectedTimeZone.ToString()}";
+            }
+            catch
+            {
+                await DisplayAlert("Ошибка", "Выберите регион", "OK");
+            }
 
-            resultLabel.Text = $"Выбранное время {timeZoneId}: {selectedDateTime.ToString()} \n Конвертированное время: {convertedDateTime.ToString()}";
+
+
+
         }
 
     }

@@ -10,7 +10,7 @@ namespace TARpv21_Mobi
     public partial class Start_Page : ContentPage
     {
         List<ContentPage> contentPages = new List<ContentPage>() { new Horoskoop_Page(), new Ajatunni(), new WordlClock() };
-        List<string> tekstid = new List<string> { "Horoskoop", "Ajatunniplaan", "WordlClock" };
+        List<string> tekstid = new List<string> { "Horoskoop", "Ajatunniplaan", "Maa Kellad" };
         public Start_Page()
         {
 

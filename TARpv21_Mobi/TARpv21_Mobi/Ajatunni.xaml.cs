@@ -70,7 +70,7 @@ namespace TARpv21_Mobi
             if (e.Item != null)
             {
                 var task = (Task)e.Item;
-                await DisplayAlert("Описание задачи", task.Description, "OK");
+                await DisplayAlert("Описание события", task.Description, "OK");
                 myListView.SelectedItem = null;
             }
         }
