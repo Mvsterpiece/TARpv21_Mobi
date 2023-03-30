@@ -40,9 +40,6 @@ namespace TARpv21_Mobi
                 await DisplayAlert("Ошибка", "Выберите регион", "OK");
             }
 
-
-
-
         }
 
     }

@@ -11,7 +11,7 @@
                     <x:String>America/Los_Angeles</x:String>
                     <x:String>Europe/London</x:String>
                     <x:String>Asia/Tokyo</x:String>
-                    <x:String>Russia/Moscow</x:String>
+                    <x:String>Europe/Moscow</x:String>
                 </Picker.Items>
             </Picker>
 
